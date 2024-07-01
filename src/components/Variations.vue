@@ -7,10 +7,23 @@
       style="margin-top: 90px; margin-left: 50px; margin-bottom: 50px"
     >
     </el-page-header>
+    <div>
+      <el-input
+        class="variations-input"
+        v-model="searchinput"
+        placeholder="Input variation ID"
+      ></el-input>
+      <el-button type="primary" round style="margin-left: 20px"
+        >Search</el-button
+      >
+    </div>
     <div
+      class="variation-table"
       style="
-        margin-top: 50px;
-        margin: 80px;
+        padding-top: 0.1%;
+        margin-top: 3%;
+        margin-left: 80px;
+        margin-right: 80px;
         margin-bottom: 400px;
         border-radius: 4px;
         box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
@@ -76,7 +89,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .input_box {
   margin-top: 0px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
@@ -223,7 +236,12 @@
 
 .table-with-margin {
   margin: 30px;
-  margin-top: 80px;
+  margin-top: 35px;
+}
+
+.variations-input {
+  width: 300px;
+  margin-left: 5%;
 }
 </style>
 
@@ -235,6 +253,7 @@ import FileSaver from "file-saver";
 export default {
   data() {
     return {
+      searchinput: "",
       snps: [],
       loadingtable: false,
       totalSize: null,

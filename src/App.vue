@@ -4,7 +4,7 @@
     <el-container>
       <el-header height="60px">
         <div>
-          <router-link to="/" class="nav-title"> peanutGDB </router-link>
+          <!-- <router-link to="/" class="nav-title"> peanutGDB </router-link> -->
         </div>
         <el-menu
           class="el-menu-demo"
@@ -15,11 +15,10 @@
           active-text-color="#FFFFFF"
           text-color="#FFFFFF"
           width="100%"
-          style="display: flex; justify-content: space-between"
         >
-          <div style="display: flex; justify-content: flex-start">
+          <div class="option-box">
             <!-- <el-menu-item index="/" class="daohan_navi nav-title">peanutGDB</el-menu-item> -->
-            <el-menu-item index="/" class="daohan_navi">Home</el-menu-item>
+            <el-menu-item index="/" class="daohan_navi" style="font-family:'PT Sans Narrow',Arial,sans-serif; font-size: 170%; margin-right:4% ">PeanutGDB</el-menu-item>
             <el-menu-item index="/Genomes" class="daohan_navi"
               >Genomes</el-menu-item
             >
@@ -35,20 +34,16 @@
             <el-menu-item index="/Modelconstruction" class="daohan_navi"
               >Tools</el-menu-item
             >
-            <el-menu-item index="/Dataset" class="daohan_navi"
+            <el-menu-item index="/Dataset" class="daohan_navi" style="margin-right: 8%"
               >Download</el-menu-item
             >
-          </div>
-          <!-- <el-menu-item index="/antiPD" class="daohan_navi">Anti-PD-1/PD-L1</el-menu-item>
-          <el-menu-item index="/Custom" class="daohan_navi">Custom</el-menu-item> -->
-          <div style="display: flex; justify-content: flex-end">
             <el-menu-item index="/Statistics" class="daohan_navi"
               >Statistics</el-menu-item
             >
             <el-menu-item index="/Tutorial" class="daohan_navi"
               >Tutorial</el-menu-item
             >
-            <el-menu-item index="/Contact" class="daohan_navi"
+            <el-menu-item index="/Contact" class="daohan_navi" style="margin-right:5%"
               >Contact</el-menu-item
             >
           </div>
@@ -84,23 +79,10 @@ export default {
   padding: 0px;
   z-index: 2009;
 }
-.nav-title {
-  position: fixed;
-  height: 60px;
-  margin: 15px;
-  margin-right: 20px;
-  font-size: 150%;
-  font-family: "San Francisco", Arial, sans-serif;
-  font-weight: bold;
-  /* font-style: italic; */
-  color: #f0f8ff;
-  cursor: pointer;
-  z-index: 1;
-}
 .el-menu-demo {
-  margin: 0px;
   padding: 0px;
-  margin-left: 20px;
+  margin-left: 2%;
+  margin-right: 5%;
   width: 100%;
 }
 .el-menu-item {
@@ -110,8 +92,12 @@ export default {
   margin: 0%;
   /* font-weight: lighter; */
 }
+.option-box {
+  display: flex; 
+  justify-content: space-between;
+}
 .daohan_navi {
-  font-size: 170%;
+  font-size: 100%;
 }
 .el-menu--horizontal > .el-menu-item.is-active {
   border-bottom: none;

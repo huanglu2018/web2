@@ -38,41 +38,54 @@
         </div>
         <el-container class="boxrow">
           <el-main
-            style="width: 75%; border: 2px solid #109274; margin-right: 30px"
+            style="
+              width: 600px;
+              border: 2px solid #109274;
+              margin-right: 20px;
+              margin-bottom: 0px;
+              height: 400px;
+            "
           >
-            <el-carousel :interval="8000"  
-			style="position: relative; left: 50%; right: 50%; margin-top: 5%; transform: translate(-50%, 0);"
-			height="400px"
-			>
+            <el-carousel
+              :interval="8000"
+              style="margin-top: 30px; justify-content: center; height: 350px"
+            >
               <el-carousel-item
                 class="carousel-item"
                 v-for="item in imgList"
                 :key="item.id"
               >
-                <img class="carousel-img" :src="item.idView" preview />
+                <div class="carousel-img-container">
+                  <!-- <img class="carousel-img" :src="item.idView" preview style="height: 300px; margin-left:30px" /> -->
+                  <el-image class="carousel-img" :src="item.idView" preview fit="contain" />
+                </div>
               </el-carousel-item>
             </el-carousel>
           </el-main>
 
           <el-main
             style="
-              width: 35%;
-              border: 0.5px solid #109274;
+              width: 40%;
               padding: 10px;
-			  position: relative; left: 22%; right: 50%; transform: translate(-50%, 0); 
+              position: relative;
+              left: 20%;
+              right: 50%;
+              transform: translate(-50%, 0);
             "
           >
-            <h2 style="text-align: center; padding-top: 30px;">Welcome to peanutGDB</h2>
+            <h2 style="text-align: center; padding-top: 30px">
+              Welcome to peanutGDB
+            </h2>
             <p
               style="
-                font-size: 25px;
-                margin: 30px;
-                font-family: 'Times New Roman', Times, serif;
+                font-size: 18px;
+                margin: 10px;
+                font-family: 'PT Sans Narrow', Arial, sans-serif;
               "
             >
-              peanutGDB is a peanut pan-genome database that presents up-to-date genomic
-              resources including: genome sequence, genetic variations and gene
-              expression landscapes.
+              peanutGDB is a peanut pan-genome database that presents up-to-date
+              genomic resources including: genome sequence, genetic variations
+              and gene expression landscapes.
             </p>
           </el-main>
         </el-container>
@@ -101,7 +114,7 @@
 </template>                
 
 
-<style>
+<style scoped>
 .hometitle {
   margin-top: 20px;
   text-align: center;
@@ -120,17 +133,15 @@
 .boxrow {
   height: 400px;
 }
-.carousel-item {
+
+/* .carousel-item {
   width: 100%;
   height: 100%;
   background: white;
   display: flex;
   justify-content: center;
-}
-.carousel-img {
-  max-width: 100%;
-  max-height: 150%;
-}
+} */
+
 .el-form-item__label {
   font-size: 1rem;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-bottom: 400px">
     <el-page-header
       @back="goBack"
       content="Browser"
@@ -7,9 +7,37 @@
       style="margin-top: 90px; margin-left: 50px; margin-bottom: 50px"
     >
     </el-page-header>
-    <div class="search-div" style="height:150px; width:55%; margin:80px;margin-bottom:400px; border-radius: 4px; box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1) ">
-    <el-cascader :options="options" clearable style="margin:45px; width:50%"></el-cascader>
-	<el-button type="primary" style="width:15%; text-align: center;"> GO！</el-button>
+    <div
+      class="search-div"
+      style="
+        height: 150px;
+        width: 55%;
+        margin: 80px;
+        margin-bottom: 50px;
+        border-radius: 4px;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+      "
+    >
+      <el-cascader
+        :options="options"
+        clearable
+        style="margin: 45px; width: 50%"
+      ></el-cascader>
+      <el-button
+        type="primary"
+        style="width: 15%; text-align: center"
+        @click="toggleDiv"
+      >
+        GO！
+      </el-button>
+    </div>
+    <div style="margin: 80px" v-if="showDiv">
+      <iframe
+        src="http://peanutgdb.crigdaas.org.cn/jbrowse2/?config=test_data%2Fvolvox%2Fconfig.json&session=local-TQTpUGy3hIQpgBvRG7xAW"
+        frameborder="10"
+        width="90%"
+        height="700"
+      ></iframe>
     </div>
   </div>
 </template>
@@ -18,6 +46,7 @@
 export default {
   data() {
     return {
+      showDiv: false,
       options: [
         {
           value: "Arachis hypogaea",
@@ -64,6 +93,9 @@ export default {
     goBack() {
       console.log("go back");
       this.$router.push("/");
+    },
+    toggleDiv() {
+      this.showDiv = true;
     },
   },
 };

@@ -3,6 +3,7 @@
     <div class="fixed-title">
       <i class="el-icon-link"></i>
       <h2 style="margin-right: 20%">{{ genomeMeta.Summary.EachID }}</h2>
+	  <div style="margin-top:20px">
       <el-button
         class="genome-download"
         type="success"
@@ -24,6 +25,7 @@
         round="true"
         >Download sequence</el-button
       >
+	  </div>
     </div>
     <el-collapse value="assembly">
       <el-collapse-item name="assembly" class="collapse-item">
